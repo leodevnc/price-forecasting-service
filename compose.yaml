@@ -1,0 +1,14 @@
+services:
+  api:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - forecast-state:/state
+  worker:
+    build: .
+    command: ["price-forecast", "--state-dir", "/state", "worker"]
+    volumes:
+      - forecast-state:/state
+volumes:
+  forecast-state:

@@ -1,0 +1,30 @@
+{
+  "model_id": "seasonal-naive",
+  "model_version": "1.0.0",
+  "inputs": {
+    "series": {
+      "market": "DEMO",
+      "market_type": "DA",
+      "location": "HUB",
+      "market_timezone": "UTC"
+    },
+    "as_of": "2026-01-01T01:00:00Z",
+    "target_times": [
+      "2026-01-01T02:00:00Z",
+      "2026-01-01T03:00:00Z"
+    ],
+    "history": [
+      {
+        "timestamp": "2026-01-01T00:00:00Z",
+        "available_at": "2026-01-01T00:05:00Z",
+        "price": -5
+      },
+      {
+        "timestamp": "2026-01-01T01:00:00Z",
+        "available_at": "2026-01-01T01:00:00Z",
+        "price": 30
+      }
+    ]
+  },
+  "idempotency_key": "demo-forecast-001"
+}

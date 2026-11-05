@@ -1,0 +1,24 @@
+{
+  "contract_version": "1.0",
+  "model_id": "seasonal-naive",
+  "version": "1.0.0",
+  "adapter": "seasonal-naive",
+  "description": "Deterministic synthetic handover example; not a trained production model.",
+  "code_revision": "reference-v1",
+  "runtime_dependencies": [
+    "price-forecasting-service==0.1.0"
+  ],
+  "interval_seconds": 3600,
+  "min_history": 2,
+  "max_horizon": 48,
+  "markets": [
+    "DEMO"
+  ],
+  "market_types": [
+    "DA",
+    "RT"
+  ],
+  "artifacts": {
+    "model.json": "caa8be8b60e835a5a81da0d1fe948f87146887d95b0e85be0fb44e20d8dec8ce"
+  }
+}

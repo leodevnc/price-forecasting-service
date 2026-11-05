@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "price-forecasting-service"
+version = "0.1.0"
+description = "Electricity price forecasting API, execution runtime, and model lifecycle"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.10,<3", "fastapi>=0.115,<1", "uvicorn>=0.30,<1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "httpx>=0.27,<1", "ruff>=0.8,<1"]
+
+[project.scripts]
+price-forecast = "price_forecasting.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.setuptools.package-data]
+price_forecasting = ["console.html"]
